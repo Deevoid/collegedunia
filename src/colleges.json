@@ -43,7 +43,7 @@
     },
     {
       "college_name": "Hansraj College Delhi University",
-      "promoted": 
+      "promoted": true,
       "discount": 20,
       "original_fees": 6000,
       "discounted_fees": 5200,
