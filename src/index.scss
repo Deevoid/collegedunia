@@ -1,0 +1,259 @@
+@import "./global";
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+header {
+  height: 5rem;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+.grid {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 80px 20px;
+  margin: 2rem 0;
+  overflow: hidden !important;
+}
+.card {
+  border: solid 1px rgb(238, 238, 238);
+  position: relative;
+  //   overflow: hidden;
+  border-radius: 10px;
+  //   max-width: 600px;
+  border: solid 1px #dfdfdf;
+  border-radius: 5px;
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.012),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.018), 0 100px 80px rgba(0, 0, 0, 0.03);
+}
+.card-header {
+  height: 233px;
+  position: relative;
+  background-repeat: no-repeat !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    filter: brightness(40%);
+    z-index: -1;
+  }
+  .card-header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .tags-wrapper {
+      .tag {
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.5rem;
+        border-radius: 20px;
+        margin-right: 0.5rem;
+        background: #fff;
+      }
+    }
+    .ranking {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+  .rating {
+    background: #f5a626;
+    width: 90px;
+    font-size: 0.8rem;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0.5rem 0;
+    .rating-title {
+      span {
+        font-size: 1rem;
+        font-weight: 550;
+      }
+    }
+  }
+}
+
+.card-body {
+  .main {
+    display: flex;
+    justify-content: space-between;
+    .info {
+      padding-top: 1rem;
+      padding-left: 1rem;
+      .top {
+        .title {
+          color: #444444;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        .rating-star {
+          margin-left: 0.5rem;
+          div {
+            display: inline-block !important;
+
+            div {
+              display: inline-block !important;
+            }
+          }
+        }
+      }
+      .nearest-place {
+        margin-top: 0.6rem;
+
+        font-size: 0.8rem;
+        font-weight: 500;
+
+        .place {
+          &:nth-child(2) {
+            color: rgb(150, 150, 150);
+          }
+          margin-right: 0.2rem;
+        }
+      }
+      .bottom {
+        margin-top: 1rem;
+        color: #444444;
+        font-size: 0.9rem;
+        .percent {
+          color: #42e4be;
+          font-weight: 600;
+        }
+        span {
+          font-size: 0.9rem;
+          font-weight: 500;
+        }
+      }
+    }
+    .price {
+      padding-top: 1rem;
+      text-align: right;
+      padding-right: 1.3rem;
+      .top {
+        .original-fees {
+          font-size: 0.8rem;
+          text-decoration: line-through;
+          font-weight: 500;
+          color: #444444;
+          margin-right: 1rem;
+        }
+        .discount {
+          position: relative;
+          &::before {
+            content: "";
+            float: left;
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-color: transparent #dd1c26 transparent transparent;
+            border-style: solid;
+            border-width: 10px 10px 10px 0;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 9px;
+            left: 0;
+            float: left;
+            width: 4px;
+            height: 4px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            background: #fff;
+            -moz-box-shadow: -1px -1px 2px #dd1c26;
+            -webkit-box-shadow: -1px -1px 2px #dd1c26;
+            box-shadow: -1px -1px 2px #dd1c26;
+          }
+          margin: 0 0.3rem;
+          background: #dd1c26;
+          font-size: 0.7rem;
+          padding: 0.2rem 0.5rem;
+          color: #fff;
+          text-align: right;
+          //   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        }
+      }
+      .middle {
+        .discounted-fees {
+          color: #dd1c26;
+          font-size: 2rem;
+          font-weight: bold;
+          margin: 0.5rem;
+          margin-bottom: 0;
+        }
+        .fees-cycle {
+          color: #444444;
+          font-weight: 500;
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+    .login {
+      background: #ccf5e7;
+      padding: 0.6rem;
+      padding-right: 0.7rem;
+      border-radius: 0 20px 20px 0;
+      color: #444444;
+      font-weight: 550;
+      font-size: 0.8rem;
+    }
+    .wifi {
+      color: #37b396;
+      //   text-align: center;
+      padding: 0 2rem 0 1rem;
+      font-weight: bold;
+      font-size: 0.8rem;
+      span {
+        margin-right: 0.5rem;
+        &::after {
+          content: "\00B7";
+          padding-left: 5px;
+        }
+        &:last-child {
+          margin-right: 0;
+          &::after {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}
+
+.promoted {
+  clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  background: #68a7ff;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  width: 150px;
+  font-weight: 500;
+}

@@ -10,7 +10,8 @@
 
 # production
 /build
-
+.scss
+.css.map
 
 # misc
 .vscode
